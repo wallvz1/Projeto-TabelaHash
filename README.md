@@ -6,7 +6,7 @@
 
 ## 1. Descrição Geral
 
-O projeto ***Sistema de Autenticação com Tabela Hash** consiste em uma implementação de um mecanismo simples de cadastro e login de usuários, desenvolvida em **C**, com o objetivo de aplicar os principais conceitos de **Estruturas de Dados**, como hashing, alocação dinâmica e tratamento de colisões.
+O projeto **Sistema de Autenticação com Tabela Hash** consiste em uma implementação de um mecanismo simples de cadastro e login de usuários, desenvolvida em **C**, com o objetivo de aplicar os principais conceitos de **Estruturas de Dados**, como hashing, alocação dinâmica e tratamento de colisões.
 
 O sistema simula um ambiente básico de autenticação, armazenando apenas o nome de usuário e o hash da senha, garantindo que a senha original nunca seja salva.
 A tabela hash foi implementada inteiramente do zero, utilizando o método da multiplicação como função de hash e encadeamento separado como estratégia de tratamento de colisões.
