@@ -44,15 +44,16 @@ O principal objetivo do projeto é construir um sistema funcional que permita:
 
 O projeto está organizado em módulos independentes, seguindo boas práticas de modularização:
 
-| Arquivo |	| Função Principal |
-|--------|------------------|
+| Arquivo |	Função Principal |
+|---------|------------------|
 | `main.c` | Contém o menu do sistema e controla a interação com o usuário. |
 | `hash.c` | Implementa todas as operações da tabela hash. |
 | `hash.h` | Declara as estruturas e protótipos utilizados em todo o sistema. |
 
 Principais componentes:
 
-| Componente | | Função |
+| Componente | Função |
+|------------|--------|
 | `Hash` |	Estrutura base contendo o vetor principal da tabela. |
 | `Usuario` |	Nó que armazena username, hash da senha e ponteiro para próximo (lista encadeada). |
 | `valorString()` |	Converte um texto (username) em valor numérico. |
