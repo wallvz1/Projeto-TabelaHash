@@ -29,12 +29,16 @@ O principal objetivo do projeto é construir um sistema funcional que permita:
  -Alocação e liberação de memória com malloc e free
  -Tabelas hash são amplamente utilizadas em sistemas reais como autenticação, caches, bancos de dados e indexação, tornando o projeto altamente relevante.
 
+---
+
 ## 3. Tecnologias Utilizadas
  
 - **Linguagem:** C
 - **Paradigma:** Programação Estruturada
 - **Ambiente de execução:** Terminal (CLI)
 - **Bibliotecas padrão:** stdio.h, stdlib.h, string.h
+
+---
 
 ## 4. Estrutura do Projeto
 
@@ -57,6 +61,8 @@ Principais componentes:
 | `buscaHash()` |	Realiza busca pelo username. |
 | `removeHash()` |	Remove um usuário mantendo a integridade da lista. |
 | `imprimeHash()` |	Exibe a tabela hash completa, mostrando colisões. |
+
+---
 
 ## 5. Como Executar o Projeto
 
