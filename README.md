@@ -1,89 +1,78 @@
-#Projeto: Sistema de Autenticação com Tabela Hash
+# Projeto Sistema de Autenticação com Tabela Hash
 
 • Pedro Carvalho Furtado
 • Matheus Cavalcanti
 • João Gabriel Diniz Gastão
 
-1. Descrição Geral
+## 1. Descrição Geral
 
-O projeto consiste no desenvolvimento de um Sistema de Autenticação implementado em C, utilizando uma Tabela Hash construída do zero.
-O sistema permite:
+O projeto ***Sistema de Autenticação com Tabela Hash** consiste em uma implementação de um mecanismo simples de cadastro e login de usuários, desenvolvida em **C**, com o objetivo de aplicar os principais conceitos de **Estruturas de Dados**, como hashing, alocação dinâmica e tratamento de colisões.
 
-Cadastro de usuários
+O sistema simula um ambiente básico de autenticação, armazenando apenas o nome de usuário e o hash da senha, garantindo que a senha original nunca seja salva.
+A tabela hash foi implementada inteiramente do zero, utilizando o método da multiplicação como função de hash e encadeamento separado como estratégia de tratamento de colisões.
 
-Login com validação de credenciais
+---
 
-Remoção de usuários
+## 2. Objetivo e Justificativa
 
-Impressão da tabela hash, incluindo colisões
+O principal objetivo do projeto é construir um sistema funcional que permita:
 
-Armazenamento seguro usando hash da senha, e não a senha original
+ -Cadastrar usuários
+ -Realizar login comparando o hash da senha
+ -Remover usuários
+ -Exibir toda a tabela hash incluindo colisões
+ -O tema foi escolhido por integrar vários conteúdos fundamentais da disciplina:
+ -Hashing de strings
+ -Conversão de valores em índices
+ -Estruturas dinâmicas (listas encadeadas)
+ -Modularização em múltiplos arquivos .c e .h
+ -Alocação e liberação de memória com malloc e free
+ -Tabelas hash são amplamente utilizadas em sistemas reais como autenticação, caches, bancos de dados e indexação, tornando o projeto altamente relevante.
 
-O principal foco do trabalho é demonstrar o uso de:
+## 3. Tecnologias Utilizadas
+ 
+- **Linguagem:** C
+- **Paradigma:** Programação Estruturada
+- **Ambiente de execução:** Terminal (CLI)
+- **Bibliotecas padrão:** stdio.h, stdlib.h, string.h
 
-Funções de hashing
+## 4. Estrutura do Projeto
 
-Tabela hash com tratamento de colisões
+O projeto está organizado em módulos independentes, seguindo boas práticas de modularização:
 
-Estruturas dinâmicas
+| Arquivo |	| Função Principal |
+|--------|------------------|
+| `main.c` | Contém o menu do sistema e controla a interação com o usuário. |
+| `hash.c` | Implementa todas as operações da tabela hash. |
+| `hash.h` | Declara as estruturas e protótipos utilizados em todo o sistema. |
 
-Alocação e liberação de memória
+Principais componentes:
 
-Modularização do código
+| Componente | | Função |
+| `Hash` |	Estrutura base contendo o vetor principal da tabela. |
+| `Usuario` |	Nó que armazena username, hash da senha e ponteiro para próximo (lista encadeada). |
+| `valorString()` |	Converte um texto (username) em valor numérico. |
+| `chaveMultiplicacao()`	Calcula o índice usando o método da multiplicação. |
+| `insereHash()`	Insere usuários e trata colisões criando listas encadeadas. |
+| `buscaHash()` |	Realiza busca pelo username. |
+| `removeHash()` |	Remove um usuário mantendo a integridade da lista. |
+| `imprimeHash()` |	Exibe a tabela hash completa, mostrando colisões. |
 
-Encadeamento separado para lidar com colisões
+## 5. Como Executar o Projeto
 
-O projeto simula um sistema simples de login, aplicando conceitos fundamentais de estruturas de dados.
+### Pré-requisitos
+- Ter o **GCC** instalado
+- Um **terminal** (cmd, PowerShell, Linux, GitHub Codespaces, etc.)
 
-2. Objetivo e Justificativa
+### Passos para execução via terminal
+1.**Abra o terminal** na pasta raiz do projeto.
+2.**Compile os arquivos:**
+  ```bash
+  gcc main.c hash.c -o main
+  ```
+3.**Execute o Sistema**
+ ```bash
+ ./main
+ ```
 
-O objetivo é implementar um sistema funcional de autenticação em C, explorando os principais conceitos de:
-
-Estruturas de dados
-
-Tabelas hash
-
-Tratamento de colisões
-
-hashing de strings
-
-gerenciamento de memória dinâmica
-
-A justificativa da escolha do tema se baseia em dois pontos principais:
-
-🔹 Importância prática
-
-Tabelas hash são amplamente utilizadas em sistemas reais — autenticação, bancos de dados, caches, compiladores e estruturas de dados internas.
-
-🔹 Valor didático
-
-Implementar uma tabela hash do zero é um excelente exercício de raciocínio lógico, ponteiros, alocação dinâmica e modularização.
-
-Além disso, por ser um problema real da computação, o projeto estimula o entendimento prático desses conceitos e facilita a aprendizagem.
-
-3. Tecnologias Utilizadas
-
-Linguagem: C (padrão ANSI C)
-
-Paradigma: Estruturado
-
-Compilador: GCC
-
-Ambiente: Terminal (CLI)
-
-Bibliotecas usadas:
-
-stdio.h
-
-stdlib.h
-
-string.h
-
-4. Estrutura do Projeto
-
-O código é dividido em múltiplos arquivos para melhor organização e modularização.
-
-Arquivo	Função Principal
-main.c	Contém o menu e controla a interação com o usuário.
-hash.c	Implementa a tabela hash, funções de hash e operações CRUD.
-hash.h	Declara estruturas, protótipos e constantes.
+O programa iniciará exibindo um menu interativo, permitindo cadastrar usuários, realizar login, remover registros e visualizar a tabela hash, incluindo colisões representadas por listas encadeadas.
