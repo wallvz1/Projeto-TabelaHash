@@ -3,6 +3,13 @@
 #include <string.h>
 #include "hash.h"
 
+/* unsigned long valorString(const char *str) {
+    unsigned long valor = 0;
+    for (int i = 0; str[i] != '\0'; i++)
+        valor += (unsigned char)str[i];
+    return valor;
+} */
+
 unsigned long valorString(const char *str) {
     unsigned long valor = 7;
     int tam = strlen(str);
